@@ -1,0 +1,6 @@
+Flask==2.0.1
+python-dotenv==0.15.0
+twilio==6.45.4
+redis==3.5.3
+requests==2.25.1
+beautifulsoup4==4.9.3
