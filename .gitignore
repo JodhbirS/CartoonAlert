@@ -1,7 +1,5 @@
 .env
 
-config.py
-
 dump.rdb
 
 __pycache__/
