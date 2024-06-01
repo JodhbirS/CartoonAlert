@@ -1,5 +1,4 @@
 Flask==2.0.1
-Werkzeug==2.0.3
 python-dotenv==0.15.0
 twilio==6.45.4
 redis==3.5.3
