@@ -10,7 +10,7 @@ app.secret_key = os.getenv('FLASK_SECRET_KEY')
 
 def validate_phone_number(phone_number):
     try:
-        lookup = client.lookups.v2.phone_numbers(phone_number).fetch()
+        lookup = client.lookups.phone_numbers(phone_number).fetch()
         phone_number = lookup.phone_number
 
         if lookup.country_code != 'CA':
