@@ -19,7 +19,3 @@ def get_latest_cartoon():
 def is_new_cartoon(cartoon_date):
     today = date.today().strftime("%B %d, %Y")
     return cartoon_date == today
-    
-cartoon_url, cartoon_date = get_latest_cartoon()
-if cartoon_date and is_new_cartoon(cartoon_date):
-    send_message(cartoon_url)
