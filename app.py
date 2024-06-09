@@ -35,14 +35,5 @@ def index():
     
     return render_template('index.html')
 
-@app.route('/test_redis')
-def test_redis():
-    try:
-        r.ping()
-        return "Redis connection successful", 200
-    except Exception as e:
-        print(f"Redis Test Error: {e}")
-        return f"Redis connection failed: {e}", 500
-
 if __name__ == '__main__':
     app.run(debug=True)
