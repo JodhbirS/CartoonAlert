@@ -24,8 +24,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run the cron script
-      run: |
-        python cron.py
+    - name: Run Cron Job
       env:
+        TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+        TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
         CRON_SECRET: ${{ secrets.CRON_SECRET }}
+      run: python cron.py
