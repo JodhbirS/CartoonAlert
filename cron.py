@@ -1,13 +1,8 @@
 import os
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-
 import get_cartoon
 import send_cartoon
 
-def handler(req, res):
+def handler():
     cron_secret = os.getenv('CRON_SECRET')
     
     cartoon_url, cartoon_date = get_cartoon.get_latest_cartoon()
