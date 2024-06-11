@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import sys
 from pathlib import Path
@@ -21,3 +22,6 @@ def handler(req, res):
         send_cartoon.send_message(cartoon_url)
     
     res.status(200).send("Cron job executed successfully.")
+
+if __name__ == "__main__":
+    handler()
