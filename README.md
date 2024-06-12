@@ -33,7 +33,7 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/JodhbirS/cartoonAlert.git
+    git clone https://github.com/JodhbirS/CartoonAlert.git
     cd cartoon-alert
     ```
 
