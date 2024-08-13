@@ -2,13 +2,14 @@
 
 ## Overview
 
-The **Cartoon Alert System** is a web application that monitors Patrick Corrigan's website for new cartoon updates and sends alerts to subscribed users via SMS. This project uses Python for the backend, with a combination of Flask for the web interface, Redis for data storage, and the Twilio API for sending SMS notifications. The application also includes a cron job that runs daily to check for new cartoons and notify users.
+The **Cartoon Alert System** is a web application that monitors Patrick Corrigan's website for new cartoon updates and sends alerts to subscribed users via SMS. This project uses Python for the backend, with a combination of Flask for the web interface, Redis for data storage, and the Twilio API for sending SMS notifications. The application also includes a cron job that runs daily to check for new cartoons and notify users. Additionally, the system analyzes the political cartoons using GPT-4o, providing a brief analysis along with the notification.
 
 ## Features
 
 - **User Subscription**: Users can subscribe to receive SMS notifications for new cartoon updates by providing their phone numbers.
 - **Daily Check**: A cron job runs daily to check for new cartoon updates on the specified website.
 - **SMS Notifications**: Users receive an SMS notification whenever a new cartoon is detected.
+- **Cartoon Analysis**: The system uses GPT-4o to provide a short analysis of the political cartoons.
 - **Data Storage**: User phone numbers and other data are stored securely in Redis.
 
 ## Technologies Used
@@ -17,6 +18,7 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
 - **Flask**: Web framework for the application.
 - **Redis**: In-memory data structure store for storing user data.
 - **Twilio API**: For sending SMS notifications.
+- **OpenAI API**: For analyzing the cartoons using GPT-4o.
 - **GitHub Actions**: For running the daily cron job.
 - **BeautifulSoup**: For web scraping to detect new cartoons.
 - **Vercel**: For deployment.
@@ -28,6 +30,7 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
 - Python 3.x
 - Redis server
 - Twilio account
+- OpenAI account
 
 ### Installation
 
@@ -59,6 +62,8 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
     REDIS_DB=your_redis_db
     REDIS_PASSWORD=your_redis_password
     CRON_SECRET=your_cron_secret
+    OPENAI_API_KEY=your_openai_api_key
+    OPENAI_ORG_ID=your_openai_org_id
     ```
 
 5. **Run Redis server**:
@@ -72,9 +77,6 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
     python app.py
     ```
 
-7. **Access the application**:
-    Open your browser and navigate to `http://localhost:5000` to access the web interface.
-
 ## Usage
 
 1. **Subscribe to Notifications**:
@@ -83,7 +85,7 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
 
 2. **Daily Check for New Cartoons**:
     - The GitHub Actions workflow is set up to run daily and trigger the `cron.py` script.
-    - The script checks for new cartoon updates and sends notifications to subscribed users.
+    - The script checks for new cartoon updates, analyzes them, and sends notifications to subscribed users.
 
 ## Deployment
 
@@ -148,6 +150,8 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
             REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
             REDIS_HOST: ${{ secrets.REDIS_HOST }}
             CRON_SECRET: ${{ secrets.CRON_SECRET }}
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+            OPENAI_ORG_ID: ${{ secrets.OPENAI_ORG_ID }}
           run: python cron.py
     ```
 

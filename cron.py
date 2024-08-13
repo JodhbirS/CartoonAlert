@@ -4,9 +4,8 @@ from send_cartoon import send_message
 from analysis import analyze_cartoon
 
 def handler():
-    cron_secret = os.getenv('CRON_SECRET')
-    
     cartoon_url, cartoon_date = get_latest_cartoon()
+    
     if not cartoon_url or not cartoon_date:
         print("Failed to get cartoon URL or date")
         return

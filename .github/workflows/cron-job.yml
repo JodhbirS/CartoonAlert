@@ -33,4 +33,6 @@ jobs:
         REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
         REDIS_HOST: ${{ secrets.REDIS_HOST }}
         CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_ORG_ID: ${{ secrets.OPENAI_ORG_ID }}
       run: python cron.py
