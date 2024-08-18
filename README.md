@@ -59,7 +59,6 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
     TWILIO_AUTH_TOKEN=your_twilio_auth_token
     REDIS_HOST=your_redis_host
     REDIS_PORT=your_redis_port
-    REDIS_DB=your_redis_db
     REDIS_PASSWORD=your_redis_password
     CRON_SECRET=your_cron_secret
     OPENAI_API_KEY=your_openai_api_key
@@ -145,7 +144,6 @@ The **Cartoon Alert System** is a web application that monitors Patrick Corrigan
           env:
             TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
             TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-            REDIS_DB: ${{ secrets.REDIS_DB }}
             REDIS_PORT: ${{ secrets.REDIS_PORT }}
             REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
             REDIS_HOST: ${{ secrets.REDIS_HOST }}
