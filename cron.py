@@ -11,6 +11,12 @@ def handler():
         return
     print(cartoon_url, cartoon_date)
 
+    analysis = analyze_cartoon(cartoon_url)
+    print("Analysis: ", analysis)
+
+    message_content = f"New cartoon available! {cartoon_url}\nAnalysis: {analysis}"
+    send_message(message_content)
+
     if cartoon_date and is_new_cartoon(cartoon_date):
         analysis = analyze_cartoon(cartoon_url)
         print("Analysis: ", analysis)
