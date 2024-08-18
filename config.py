@@ -14,6 +14,5 @@ client = Client(account_sid, auth_token)
 # Redis connection
 redis_host = os.getenv('REDIS_HOST')
 redis_port = int(os.getenv('REDIS_PORT'))
-redis_db = int(os.getenv('REDIS_DB'))
 redis_password = os.getenv('REDIS_PASSWORD', None)
-r = redis.Redis(host=redis_host, port=redis_port, db=redis_db, password=redis_password)
+r = redis.Redis(host=redis_host, port=redis_port, password=redis_password, ssl=True)
